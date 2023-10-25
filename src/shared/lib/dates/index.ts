@@ -1,3 +1,5 @@
+const SUNDAY = 0;
+
 export const calcSundays = (startDate: Date, endDate: Date) => {
   let count = 0;
 
@@ -6,7 +8,7 @@ export const calcSundays = (startDate: Date, endDate: Date) => {
 
   while (currentDate <= lastDate) {
     const dayOfWeek = currentDate.getDay();
-    if (dayOfWeek === 6) {
+    if (dayOfWeek === SUNDAY) {
       count++;
     }
 
@@ -18,5 +20,5 @@ export const calcSundays = (startDate: Date, endDate: Date) => {
 
 export const isNotSunday = (date: Date) => {
   const day = date.getDay();
-  return day !== 6;
+  return day !== SUNDAY;
 };
